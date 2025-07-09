@@ -1,16 +1,20 @@
+import sys
 from stats import num_letters, num_words, filters
 
+if len(sys.argv) < 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
 
+else:
+    print("============ BOOKBOT ============")
+    print("Analyzing book found at books/frankenstein.txt...")
+    print("----------- Word Count ----------")
 
-print("============ BOOKBOT ============")
-print("Analyzing book found at books/frankenstein.txt...")
-print("----------- Word Count ----------")
+    num_words(sys.argv[1])
 
-num_words("books/frankenstein.txt")
+    print("--------- Character Count -------")
 
-print("--------- Character Count -------")
+    num_letters(sys.argv[1])
+    filters()
 
-num_letters("books/frankenstein.txt")
-filters()
-
-print("============= END ===============")
+    print("============= END ===============")
